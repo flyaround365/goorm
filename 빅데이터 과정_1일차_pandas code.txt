@@ -22,6 +22,7 @@ topik = pd.read_csv('jeju_livestock_20240213.csv')
 print(topik)
 
 DataFrame.set_index(self, keys, drop=True, append=False, inplace=False, verify_integrity=False)
+
 DataFrame.reset_index(self, level=None drop=False, inplace=False, col_level=0, col_fill='')
 
 size
@@ -31,9 +32,16 @@ len
 loc iloc at iat
 isin
 
-3. 탐색
+3. 탐색 _ 
 
 4. 정제
+
+data = pd.DataFrame(                                                    
+    {"학번" : [201001, 201002, 201003, 201004, 201005, 201006, 201007, 201008, 201009, 201010, 201011, 201012, 201013, 201014, 201015, 201016, 201017, 201018, 201019, 201020],
+     "인공지능" : [64, 98, 82, 69, 78, 58, 95, 71, 81, 51, 89, 69, 98, 62, 53, 81, 53, 56, 87, 50],
+     "플랫폼" : [60, 55, 94, 93, 75, 96, 70, 73, 52, 87, 94, 98, 99, 60, 58, 88, 74, 67, 65, 54],
+     "판다스" : [84, 79, 100, 52, 85, 60, 80, 51, 62, 80, 56, 51, 77, 54, 62, 87, 98, 68, 70, 66]})
+
 column 이름 변경하기
 데이터 변경
 데이터 추가
