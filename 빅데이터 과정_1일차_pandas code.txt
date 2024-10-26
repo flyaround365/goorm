@@ -1,0 +1,83 @@
+
+pandas : 데이터를 분석하기 위해 사용하는 Python Library입니다. 
+
+1. 생성
+
+import pandas as pd  
+capital = pd.Series(['Berlin', 'London', 'Madrid', 'Paris', 'Roma'])
+print(capital)
+
+import pandas as pd
+cr = pd.DataFrame(                                         
+    {"고구마" : [5,3,1],
+     "감자" : [20,30,40],
+     "호박" : [1,2,3]},
+     index = ['우리집', '앞집', '쫄보네'])
+print(cr)
+
+2. 읽기
+
+import pandas as pd
+topik = pd.read_csv('jeju_livestock_20240213.csv')
+print(topik)
+
+DataFrame.set_index(self, keys, drop=True, append=False, inplace=False, verify_integrity=False)
+DataFrame.reset_index(self, level=None drop=False, inplace=False, col_level=0, col_fill='')
+
+size
+columns 
+values
+len
+loc iloc at iat
+isin
+
+3. 탐색
+
+4. 정제
+column 이름 변경하기
+데이터 변경
+데이터 추가
+데이터 1개 변경
+데이터 여러개 변경
+삭제하기
+drop VS pop
+결측값 NaN
+결측값 제외 출력
+결측값 데이터 입력
+특정 데이터 변경
+
+5. 분석
+head()
+tail()
+describe()
+T or transpose()
+sort_index()
+sort_values()
+max()
+min()
+sum()
+mean()
+median()
+rank()
+
+6.7. 시각화
+import matplotlib.pyplot as plt
+
+# 그래프를 틀로 표현해서
+plt.figure()
+
+#화면에 나타나게하는 메소드
+plt.show()
+
+
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotlib -rf
+
+line 
+bar 
+scatter
+pie
+histogram 
+line + bar
+
