@@ -68,6 +68,17 @@ mean()
 median()
 rank()
 
+github.com/flyaround365/goorm
+
+import pandas as pd
+data = pd.read_csv('jeju_livestock_20240213.csv')
+data_del = data_read.drop(['구분', '비고', '데이터기준일자'], axis=1)     # 삭제
+data_count = data_del.drop([0,2,4,6,8])                 # 두수만 남기기
+data = data_count.set_index('기준연도', drop=True)        # 기준연도 인덱스로 이동
+
+sort_index1 = data.sort_index(axis=0, ascending=True)
+print(sort_index1)
+
 6.7. 시각화
 import matplotlib.pyplot as plt
 
