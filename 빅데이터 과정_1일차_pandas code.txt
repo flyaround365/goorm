@@ -112,3 +112,41 @@ pie
 histogram 
 line + bar
 
+
+[line]
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# 파일 읽기
+data = pd.read_csv('jeju_livestock_20240213.csv')
+data_del = data.drop(['구분', '비고', '데이터기준일자'], axis=1)     # 삭제
+data_count = data_del.drop([0,2,4,6,8])                 # 두수만 남기기
+print(data_count)
+
+# 차트 윈도우 제목
+plt.figure(num="window title")        # colab에서는 창 없음
+
+# 차트 글꼴
+plt.rcParams.update({'font.family': 'NanumBarunGothic','font.size': 12})
+
+# 차트 제목
+plt.title("제주도 가축")
+
+# x, y 축 제목
+plt.xlabel("x 데이터")
+plt.ylabel("y 데이터")
+
+ax = plt.gca()          # dataframe data 와 plot() 메소드로 만든 그래프 틀을 합친다. # 설정없으면 분리되어 나타남
+columns = ['한육우', '한우', '육우', '젖소']
+
+color = 'limegreen'     # 'violet' '#17becf' 'r' 'b'
+
+# DataFrame의 plot() 메서드 기본형식 : DataFrame.plot(kind='line', x=columns, y=columns, color=color, ax=None)
+# data.plot(kind='line', x='기준연도', y=columns, color=color, ax=ax, marker='*')      # color 없애고 출력
+# data.plot(kind='line', x='기준연도', y=columns, ax=ax, marker='*')
+
+data_count.plot(kind='bar', x='기준연도', y=columns, ax=ax, stacked=False)     # kind='barh' 수평방향, stacked=True
+
+plt.show()
+
